@@ -5,3 +5,4 @@ debug/
 Debug/
 noasan/
 zig-cache/
+.cache/
