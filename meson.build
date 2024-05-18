@@ -1,4 +1,4 @@
-project('wofi', 'c', version : 'hg', default_options : ['c_std=c99', 'buildtype=release', 'warning_level=2'])
+project('wofi', 'c', version : 'git', default_options : ['c_std=c99', 'buildtype=release', 'warning_level=2'])
 cc = meson.get_compiler('c')
 
 pkgcfg = import('pkgconfig')
@@ -9,12 +9,12 @@ wayland = dependency('wayland-client')
 threads = dependency('threads')
 dl = cc.find_library('dl')
 
-hg = find_program('hg', native : true, required : false)
+git = find_program('git', native : true, required : false)
 
 version = meson.project_version()
 
-if hg.found()
-	version = run_command(hg, 'identify', check : true).stdout().strip()
+if git.found()
+	version = run_command(git, 'rev-parse HEAD', check : false).stdout().strip()
 endif
 
 add_project_arguments('-D_GNU_SOURCE', '-DVERSION="' + version + '"', language : 'c')
