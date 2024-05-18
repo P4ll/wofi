@@ -12,10 +12,12 @@ pub fn build(b: *std.Build) void {
     });
 
     wofi.addIncludePath(b.path("inc"));
+    wofi.addIncludePath(b.path("man"));
     wofi.linkSystemLibrary("gtk+-3");
     wofi.linkSystemLibrary("wayland-client");
     wofi.linkSystemLibrary("gio-unix-2.0");
-    // wofi.linkSystemLibrary("pthread");
+    wofi.linkSystemLibrary("dl");
+    wofi.linkSystemLibrary("pthread");
 
     wofi.linkLibC();
 
