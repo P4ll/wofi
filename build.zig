@@ -15,7 +15,7 @@ pub fn build(b: *std.Build) void {
     wofi.linkSystemLibrary("gtk+-3");
     wofi.linkSystemLibrary("wayland-client");
     wofi.linkSystemLibrary("gio-unix-2.0");
-    wofi.linkSystemLibrary("pthread");
+    // wofi.linkSystemLibrary("pthread");
 
     wofi.linkLibC();
 
@@ -44,7 +44,7 @@ pub fn build(b: *std.Build) void {
     b.installArtifact(wofi);
 
     const run = b.addRunArtifact(wofi);
-    const ss = b.step("run", "run");
+    const run_step = b.step("run", "run");
     run.step.dependOn(b.getInstallStep());
-    ss.dependOn(&run.step);
+    run_step.dependOn(&run.step);
 }

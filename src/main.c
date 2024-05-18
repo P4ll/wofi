@@ -32,6 +32,7 @@
 #include <wayland-client.h>
 
 #include <gtk/gtk.h>
+#define VERSION "v1.4.1"
 
 static const char* nyan_colors[] = {"#FF0000", "#FFA500", "#FFFF00", "#00FF00", "#0000FF", "#FF00FF"};
 static size_t nyan_color_l = sizeof(nyan_colors) / sizeof(char*);

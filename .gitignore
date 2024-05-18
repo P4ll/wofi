@@ -6,3 +6,4 @@ Debug/
 noasan/
 zig-cache/
 .cache/
+zig-out/
