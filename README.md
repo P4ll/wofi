@@ -1,3 +1,9 @@
+This is fork of [wofi](https://hg.sr.ht/~scoopta/wofi) with the zig build system.
+
+Original README:
+
+-----------------------
+
 # Wofi
 Wofi is a launcher/menu program for wlroots based wayland compositors such as sway
 

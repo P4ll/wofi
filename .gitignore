@@ -4,3 +4,4 @@ build/
 debug/
 Debug/
 noasan/
+zig-cache/
